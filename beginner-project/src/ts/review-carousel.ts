@@ -34,7 +34,13 @@ function createArticle(article: HTMLDivElement, reviewer: reviewer) {
   // const articleEl = document.querySelector<HTMLElement>('article');
   if (article) {
     const imgEl = article.querySelector('img');
-    imgEl?.setAttribute('src', `/review/${reviewer.img}`);
+    imgEl!.setAttribute('src', `/review/${reviewer.img}`);
+    const nameEl = article.querySelector('.profile-content span.name');
+    nameEl!.textContent = reviewer.name;
+    const jobEl = article.querySelector('.profile-content span.job');
+    jobEl!.textContent = reviewer.job;
+    const reviewContentEl = article.querySelector('.review-content');
+    reviewContentEl!.textContent = reviewer.content;
   }
   return article;
 }
@@ -50,31 +56,23 @@ window.addEventListener('DOMContentLoaded', () => {
 
 function prevClick(carouselList: NodeListOf<HTMLDivElement>) {
   if (index > 0) {
+    currentWidth = carouselWidth * (index - 1);
     carouselList[index].style.transition = transitionStyle;
-    carouselList[index].style.transform = `translateX(${
-      currentWidth - carouselWidth
-    }px)`;
+    carouselList[index].style.transform = `translateX(-${currentWidth}px)`;
     carouselList[index - 1].style.transition = transitionStyle;
-    carouselList[index - 1].style.transform = `translateX(${
-      currentWidth - carouselWidth
-    }px)`;
+    carouselList[index - 1].style.transform = `translateX(-${currentWidth}px)`;
     index--;
-    currentWidth = currentWidth + carouselWidth;
   }
 }
 
 function nextClick(carouselList: NodeListOf<HTMLDivElement>) {
-  if (index < carouselList.length) {
+  if (index < carouselList.length - 1) {
+    currentWidth = carouselWidth * (index + 1);
     carouselList[index].style.transition = transitionStyle;
-    carouselList[index].style.transform = `translateX(-${
-      (index + 1) * carouselWidth
-    }px)`;
+    carouselList[index].style.transform = `translateX(-${currentWidth}px)`;
     carouselList[index + 1].style.transition = transitionStyle;
-    carouselList[index + 1].style.transform = `translateX(-${
-      (index + 1) * carouselWidth
-    }px)`;
+    carouselList[index + 1].style.transform = `translateX(-${currentWidth}px)`;
     index++;
-    currentWidth = -(currentWidth + carouselWidth);
   }
 }
 
@@ -83,15 +81,32 @@ window.onload = function () {
   const carouselList: NodeListOf<HTMLDivElement> = document.querySelectorAll(
     '.carousel-list > article'
   );
-  // console.log(carouselList);
+
   prevEl!.addEventListener('click', () => {
     prevClick(carouselList);
-    console.log(`index: ${index}`);
   });
 
   const nextEl = document.querySelector('.next');
   nextEl!.addEventListener('click', () => {
     nextClick(carouselList);
-    console.log(`index: ${index}`);
+  });
+
+  const surpriseButton = document.querySelector('button');
+  surpriseButton?.addEventListener('click', () => {
+    const randomIndex = Math.floor(Math.random() * carouselList.length);
+    console.log(`index: ${index}, randomIndex: ${randomIndex}`);
+    if (index < randomIndex) {
+      currentWidth = carouselWidth * randomIndex;
+    } else if (index > randomIndex) {
+      currentWidth = carouselWidth * randomIndex;
+    }
+    // currentWidth = carouselWidth * (index - 1);
+    carouselList[index].style.transition = transitionStyle;
+    carouselList[index].style.transform = `translateX(-${currentWidth}px)`;
+    carouselList[randomIndex].style.transition = transitionStyle;
+    carouselList[
+      randomIndex
+    ].style.transform = `translateX(-${currentWidth}px)`;
+    index = randomIndex;
   });
 };
