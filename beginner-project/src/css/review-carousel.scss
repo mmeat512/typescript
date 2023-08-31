@@ -46,21 +46,28 @@ section {
   padding: 2em;
   border-radius: 1em;
   box-shadow: 0.1em 0.1em 1em $gray;
-  article {
-    .img-wrap {
-      position: relative;
-      .icon-wrap {
-        background-color: $blue;
-        position: absolute;
-        padding: 0.4em;
-        border-radius: 26px;
-        left: 42%;
-      }
-      img {
-        width: 150px;
-        height: 150px;
-        border-radius: 150px;
-        box-shadow: 6px -6px 0 1px $blue;
+  overflow: hidden;
+  .carousel-list {
+    display: flex;
+    width: fit-content;
+    article {
+      padding-right: 2em;
+      width: 800px;
+      .img-wrap {
+        position: relative;
+        .icon-wrap {
+          background-color: $blue;
+          position: absolute;
+          padding: 0.4em;
+          border-radius: 26px;
+          left: 42%;
+        }
+        img {
+          width: 150px;
+          height: 150px;
+          border-radius: 150px;
+          box-shadow: 6px -6px 0 1px $blue;
+        }
       }
     }
 
@@ -83,6 +90,11 @@ section {
       margin-top: 1.4em;
       color: $gray;
       font-weight: 600;
+    }
+  }
+  .icon-group {
+    icon {
+      cursor: pointer;
     }
   }
 
