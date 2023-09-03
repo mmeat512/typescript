@@ -24,7 +24,7 @@ const reviewList: Array<reviewer> = [
     content: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
   },
 ];
-const transitionStyle = '0.6s ease-out';
+// const transitionStyle = '0.6s ease-out';
 const fontSize = 14;
 const carouselWidth = 800 + fontSize * 2;
 let currentWidth = 0;
@@ -57,9 +57,9 @@ window.addEventListener('DOMContentLoaded', () => {
 function prevClick(carouselList: NodeListOf<HTMLDivElement>) {
   if (index > 0) {
     currentWidth = carouselWidth * (index - 1);
-    carouselList[index].style.transition = transitionStyle;
+    carouselList[index].setAttribute('class', 'article-carousel');
     carouselList[index].style.transform = `translateX(-${currentWidth}px)`;
-    carouselList[index - 1].style.transition = transitionStyle;
+    carouselList[index - 1].setAttribute('class', 'article-carousel');
     carouselList[index - 1].style.transform = `translateX(-${currentWidth}px)`;
     index--;
   }
@@ -68,11 +68,17 @@ function prevClick(carouselList: NodeListOf<HTMLDivElement>) {
 function nextClick(carouselList: NodeListOf<HTMLDivElement>) {
   if (index < carouselList.length - 1) {
     currentWidth = carouselWidth * (index + 1);
-    carouselList[index].style.transition = transitionStyle;
+    carouselList[index].setAttribute('class', 'article-carousel');
     carouselList[index].style.transform = `translateX(-${currentWidth}px)`;
-    carouselList[index + 1].style.transition = transitionStyle;
+    carouselList[index + 1].setAttribute('class', 'article-carousel');
     carouselList[index + 1].style.transform = `translateX(-${currentWidth}px)`;
     index++;
+  }
+}
+
+function resetTransform(carouselList: NodeListOf<HTMLDivElement>) {
+  for (const carousel of carouselList) {
+    carousel.style.transform = 'none';
   }
 }
 
@@ -100,13 +106,16 @@ window.onload = function () {
     } else if (index > randomIndex) {
       currentWidth = carouselWidth * randomIndex;
     }
-    // currentWidth = carouselWidth * (index - 1);
-    carouselList[index].style.transition = transitionStyle;
+    carouselList[index].setAttribute('class', 'article-carousel');
     carouselList[index].style.transform = `translateX(-${currentWidth}px)`;
-    carouselList[randomIndex].style.transition = transitionStyle;
+    carouselList[randomIndex].setAttribute('class', 'article-carousel');
     carouselList[
       randomIndex
     ].style.transform = `translateX(-${currentWidth}px)`;
+    for (let i = index; i <= randomIndex; i++) {
+      carouselList[i].setAttribute('class', 'article-carousel');
+      carouselList[i].style.transform = `translateX(-${currentWidth}px)`;
+    }
     index = randomIndex;
   });
 };
