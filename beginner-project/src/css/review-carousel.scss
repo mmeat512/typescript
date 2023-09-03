@@ -91,6 +91,10 @@ section {
       color: $gray;
       font-weight: 600;
     }
+
+    .article-carousel {
+      transition: 0.8s ease-out;
+    }
   }
   .icon-group {
     icon {
