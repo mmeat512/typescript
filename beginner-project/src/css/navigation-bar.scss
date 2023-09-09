@@ -1,0 +1,42 @@
+@use './colors' as *;
+@import url(./main.scss);
+
+header {
+  display: flex;
+  justify-content: space-between;
+  .title {
+    font-size: 2.4em;
+    /* offset-x | offset-y | blur-radius | color */
+    text-shadow: 2px 2px 2px $gray;
+    .highlight {
+      color: $blue;
+    }
+  }
+  .menu {
+    align-self: center;
+  }
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  div {
+    padding: 0.6em 0.2em;
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: 400;
+    color: $dark-gray;
+  }
+}
+
+/* media query */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .menu {
+    display: none;
+  }
+}

@@ -80,8 +80,3 @@ document.querySelector('#app')!.innerHTML = `
         <button>Surprise Me</button>
     </section>
 `;
-
-/**
- * <article>
- * [아이콘 + 이미지 + 이름 + 직업 + 리뷰] * 3
- */
