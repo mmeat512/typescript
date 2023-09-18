@@ -1,0 +1,55 @@
+@use './colors' as *;
+@import url(./main.scss);
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 1em;
+  .title {
+    font-size: 2.4em;
+    /* offset-x | offset-y | blur-radius | color */
+    text-shadow: 2px 2px 2px $gray;
+    .highlight {
+      color: $blue;
+    }
+  }
+  .menu {
+    padding-top: 0.8em;
+    align-self: center;
+  }
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  transition: all 1s;
+  overflow: hidden;
+  // box-shadow: 1px 2px 2px black;
+  div {
+    padding: 0.6em 0.2em;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 400;
+    color: $dark-gray;
+  }
+}
+
+section {
+  background-color: $white-gray;
+  height: 100vh;
+}
+
+/* media query */
+@media (max-width: 768px) {
+  nav {
+    height: 0;
+    display: block;
+    div {
+      text-align: left;
+      padding-left: 1em;
+    }
+    &.active {
+      display: block;
+      height: 13em;
+    }
+  }
+}
