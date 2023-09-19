@@ -3,7 +3,7 @@ enum buttonType {
   RESET = 'reset',
   INCREASE = 'increase',
 }
-window.onload = function () {
+function fCounter() {
   const buttonGroupList = document.querySelectorAll('button');
   const numberEl = document.querySelector('div.number') as HTMLElement;
 
@@ -25,4 +25,6 @@ window.onload = function () {
       }
     });
   });
-};
+}
+
+export default fCounter;

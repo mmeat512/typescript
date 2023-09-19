@@ -82,7 +82,7 @@ function resetTransform(carouselList: NodeListOf<HTMLDivElement>) {
   }
 }
 
-window.onload = function () {
+function fReviewCarousel() {
   const prevEl = document.querySelector('.prev');
   const carouselList: NodeListOf<HTMLDivElement> = document.querySelectorAll(
     '.carousel-list > article'
@@ -118,4 +118,6 @@ window.onload = function () {
     }
     index = randomIndex;
   });
-};
+}
+
+export default fReviewCarousel;

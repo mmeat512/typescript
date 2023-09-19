@@ -1,7 +1,4 @@
-import '../ts/navigation-bar';
-import '../css/navigation-bar.scss';
-
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
+export const navigation = `
     <header>
         <div class="title">Coding <span class="highlight">Addict</span></div>
         <div class="menu"> 

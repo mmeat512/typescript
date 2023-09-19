@@ -1,4 +1,4 @@
-window.onload = function () {
+function fNavigation() {
   const menuEl = document.querySelector<HTMLDivElement>('.menu');
   const navEl = document.querySelector<HTMLElement>('nav');
   if (menuEl) {
@@ -7,4 +7,6 @@ window.onload = function () {
       navEl!.classList.toggle('active');
     });
   }
-};
+}
+
+export default fNavigation;
