@@ -1,7 +1,7 @@
 import page from '../pages/index';
 import script from '../ts/index';
 
-type pagesType = {
+export type pagesType = {
   [index: string]: () => void;
 };
 

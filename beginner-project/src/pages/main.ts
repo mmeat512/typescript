@@ -1,26 +1,18 @@
+import { pageStr } from '../router';
+
+function createList() {
+  return pageStr
+    .map((str, index) => {
+      if (index === 0) return;
+      else return `<li><a href="#/${str}">${str}</a></li>`;
+    })
+    .join('');
+}
+
 export const main = `
   <div>
     <ul>
-      <li>
-        <a href="#/color-fillpper" target="">
-          Color-fillpper
-        </a>
-      </li>
-      <li>
-        <a href="#/counter" target="">
-          Counter
-        </a>
-      </li>
-      <li>
-        <a href="#/navigation">
-          Navigation
-        </a>
-      </li>
-      <li>
-        <a href="#/review-carousel">
-          Review-carousel
-        </a>
-      </li>
+     ${createList()}
     </ul>
   </div>
 `;

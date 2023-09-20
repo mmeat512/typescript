@@ -2,6 +2,11 @@ interface Route {
   fragment: string;
   component: () => void;
 }
+
+export interface Router {
+  addRoute: (fragment: string, component: () => void) => Router;
+  start: () => void;
+}
 // router.js
 export default function createRouter() {
   // 애플리케이션의 경로 목록들을 배열에 담는다.
