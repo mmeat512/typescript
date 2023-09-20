@@ -1,7 +1,5 @@
-type colorType = 'COLOR' | 'HEX';
 const TYPE_COLOR = 'COLOR';
 const TYPE_HEX = 'HEX';
-type HTML = HTMLElement | null;
 
 const COLOR = [
   'red',
@@ -54,22 +52,24 @@ function hexChange() {
   return hexColor;
 }
 
-window.onload = function () {
+function fColorFillpper() {
   const colorTab = document.getElementById('color');
   const hexTab = document.getElementById('hex');
   hexTab?.addEventListener('click', () => {
     hexTab.className = 'active';
-    colorTab?.removeAttribute('class');
+    colorTab!.removeAttribute('class');
   });
   colorTab?.addEventListener('click', () => {
     colorTab.className = 'active';
     hexTab?.removeAttribute('class');
   });
-  const sectionEl = document.querySelector('section') as HTMLElement;
-  const buttonEl = document.querySelector(
+  const sectionEl = document.querySelector<HTMLElement>('section');
+  const buttonEl = document.querySelector<HTMLButtonElement>(
     'section > div > button'
-  ) as HTMLElement;
-  const spanEl = document.querySelector('section > div > p > span') as Element;
+  );
+  const spanEl = document.querySelector<HTMLSpanElement>(
+    'section > div > p > span'
+  );
   buttonEl?.addEventListener('click', () => {
     const type = document
       .querySelector('.active')
@@ -77,15 +77,17 @@ window.onload = function () {
       ?.toUpperCase();
     if (type === TYPE_COLOR) {
       const color = colorChange();
-      sectionEl.style.background = color;
+      sectionEl!.style.background = color;
       /** 정규식 첫글자 대문자 변환 */
-      spanEl.innerHTML = color.replace(/^[a-z]/, (char) => char.toUpperCase());
+      spanEl!.innerHTML = color.replace(/^[a-z]/, (char) => char.toUpperCase());
       buttonEl.style.background = color;
     } else if (type === TYPE_HEX) {
       const color = hexChange();
-      sectionEl.style.background = color;
-      spanEl.innerHTML = color;
+      sectionEl!.style.background = color;
+      spanEl!.innerHTML = color;
       buttonEl.style.background = color;
     }
   });
-};
+}
+
+export default fColorFillpper;

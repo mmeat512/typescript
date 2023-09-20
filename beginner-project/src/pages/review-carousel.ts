@@ -1,7 +1,4 @@
-import '../ts/review-carousel';
-import '../css/review-carousel.scss';
-
-document.querySelector('#app')!.innerHTML = `
+export const reviewCarousel = `
     <header>
         <p>Our Reviews</p>
         <div class="under-bar"></div>

@@ -1,7 +1,4 @@
-import '../css/counter.scss';
-import '../ts/counter';
-
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
+export const counter = `
 <section>
   <div>
     <div class="title">Counter</div>
