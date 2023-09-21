@@ -32,8 +32,10 @@
   aside {
     position: fixed;
     height: 100vh;
-    width: 350px;
+    width: 0;
+    overflow: hidden;
     background-color: $white;
+    transition: 1s;
     .header {
       padding: 0.8em 0.4em 0 0.4em;
       font-size: 1.2em;
@@ -71,8 +73,11 @@
           transform: translateX(0.3em);
           transition: 1s ease;
         }
-        // transform:
       }
+    }
+
+    &.active {
+      width: 350px;
     }
   }
 }
