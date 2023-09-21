@@ -7,6 +7,7 @@ export const pageStr = [
   'counter',
   'navigation',
   'review-carousel',
+  'sidebar',
 ];
 
 export function addRouteList(router: Router, pages: pagesType) {
@@ -15,7 +16,8 @@ export function addRouteList(router: Router, pages: pagesType) {
     .addRoute('#/color-fillpper', pages.colorFillpper)
     .addRoute('#/counter', pages.counter)
     .addRoute('#/navigation', pages.navigation)
-    .addRoute('#/review-carousel', pages.reviewCarousel);
+    .addRoute('#/review-carousel', pages.reviewCarousel)
+    .addRoute('#/sidebar', pages.sidebar);
 
   return router;
 }
