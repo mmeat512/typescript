@@ -1,0 +1,83 @@
+@use './colors' as *;
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.sidebar {
+  background-color: $white-gray;
+  height: 100vh;
+  button {
+    background: none;
+    border: none;
+  }
+  .toggle {
+    position: fixed;
+    top: 2em;
+    right: 2em;
+    cursor: pointer;
+    svg {
+      animation: bounce 2s ease 0s infinite;
+    }
+  }
+
+  aside {
+    position: fixed;
+    height: 100vh;
+    width: 0;
+    overflow: hidden;
+    background-color: $white;
+    transition: 1s;
+    .header {
+      padding: 0.8em 0.4em 0 0.4em;
+      font-size: 1.2em;
+      display: flex;
+      justify-content: space-between;
+      margin: 0.2em 0.4em;
+      text-shadow: 0.1em 0.1em 0.1em $gray;
+      h2 {
+        margin: 0;
+        span {
+          color: $blue;
+        }
+      }
+      .close-btn {
+        right: 0;
+        cursor: pointer;
+      }
+    }
+    ul {
+      font-size: 1.6em;
+      padding: 0.4em 0;
+      margin: 0;
+      li {
+        color: $deep-blue;
+        list-style: none;
+        padding: 0.4em 0.8em;
+        margin: 0.6em 0;
+        cursor: pointer;
+      }
+      li:hover {
+        background-color: $sky-deep-blue;
+        span {
+          display: inline-block;
+          color: $blue;
+          transform: translateX(0.3em);
+          transition: 1s ease;
+        }
+      }
+    }
+
+    &.active {
+      width: 350px;
+    }
+  }
+}
