@@ -1,5 +1,6 @@
 import fColorFillpper from './color-fillpper';
 import fCounter from './counter';
+import fModal from './modal';
 import fNavigation from './navigation-bar';
 import fReviewCarousel from './review-carousel';
 import fSidebar from './sidebar';
@@ -13,6 +14,7 @@ const script: scriptType = {
   reviewCarousel: fReviewCarousel,
   navigation: fNavigation,
   sidebar: fSidebar,
+  modal: fModal,
 };
 
 export default script;

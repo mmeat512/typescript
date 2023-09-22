@@ -1,0 +1,77 @@
+@use './colors' as *;
+
+.modal {
+  background-image: url('modal/tiger.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-color: black;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  .banner {
+    background-color: $white;
+    width: 400px;
+    height: 200px;
+    border-radius: 1em;
+    text-align: center;
+    line-height: 2em;
+    align-items: center;
+    /* 가운데 정렬 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -100px -200px;
+    h2 {
+      margin: 0;
+      padding: 2em;
+    }
+    .toggle-btn {
+      background-color: $blue;
+      color: $white;
+      border-radius: 0.4em;
+      border: none;
+      font-weight: 800;
+      letter-spacing: 0.3em;
+      padding: 0.6em 1em;
+    }
+  }
+
+  .modal-inner {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    background-color: $white-gray-overlay;
+    .modal-content {
+      width: 400px;
+      height: 200px;
+      background-color: $white;
+      border-radius: 1em;
+      margin: 0 auto;
+      text-align: end;
+      /* 가운데 정렬 */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -100px -200px;
+      .close-btn {
+        background: none;
+        border: none;
+        padding: 0.4em 1em;
+      }
+      .content {
+        font-size: 2em;
+        font-weight: 800;
+        text-align: center;
+        line-height: 2em;
+        padding: 1.2em;
+      }
+    }
+  }
+  &.active {
+    display: block;
+  }
+}

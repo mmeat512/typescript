@@ -1,6 +1,7 @@
 import { colorFillpper } from './color-fillpper';
 import { counter } from './counter';
 import { main } from './main';
+import { modal } from './modal';
 import { navigation } from './navigation-bar';
 import { reviewCarousel } from './review-carousel';
 import { sidebar } from './sidebar';
@@ -15,6 +16,7 @@ const pages: pagesType = {
   reviewCarousel: reviewCarousel,
   navigation: navigation,
   sidebar: sidebar,
+  modal: modal,
 };
 
 export default pages;
