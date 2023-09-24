@@ -3,6 +3,7 @@ import { counter } from './counter';
 import { main } from './main';
 import { modal } from './modal';
 import { navigation } from './navigation-bar';
+import { question } from './question';
 import { reviewCarousel } from './review-carousel';
 import { sidebar } from './sidebar';
 
@@ -17,6 +18,7 @@ const pages: pagesType = {
   navigation: navigation,
   sidebar: sidebar,
   modal: modal,
+  question: question,
 };
 
 export default pages;

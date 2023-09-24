@@ -1,3 +1,17 @@
+/*
+=============== 
+Fonts
+===============
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap');
+
+/*
+=============== 
+Variables
+===============
+*/
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -12,4 +26,22 @@
 
 body {
   margin: 0;
+}
+
+/* 리스트 타입 없애기 */
+ul {
+  list-style-type: none;
+}
+h1,
+h2,
+h3,
+h4 {
+  padding: 0;
+  margin: 0;
+}
+/* 가운데 정렬 */
+main {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
 }

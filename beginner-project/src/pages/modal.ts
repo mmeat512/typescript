@@ -7,7 +7,7 @@ export const modal = `
             OPEN MODAL
         </button>
     </div>
-    <div class="modal-inner">
+    <div class="modal">
         <div class="modal-content">
             <button class="close-btn">
                 ${close('30', '30')}
