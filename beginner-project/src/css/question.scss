@@ -46,6 +46,15 @@
           font-weight: 500;
         }
         .toggle-question {
+          i {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-image: url('../../public/svg/plus.svg');
+            &.active {
+              background-image: url('../../public/svg/minus.svg');
+            }
+          }
           &:hover {
             /* rotate -> deg */
             transform: rotate(90deg);
