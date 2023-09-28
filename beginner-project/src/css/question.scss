@@ -3,6 +3,7 @@
 
 .question-wrap {
   background-color: $white-gray;
+  min-height: 100vh;
   button {
     background: none;
     border: none;
@@ -16,19 +17,20 @@
     font-size: 2em;
     color: $gold;
     font-weight: 800;
+    text-align: center;
+    margin-bottom: 0.6em;
   }
 
   ul {
+    margin: 0 auto;
+    width: 64vw;
+    padding: 0;
     li {
-      margin: 2em;
       padding: 1em 2em;
-      width: 60vw;
+      margin-bottom: 0.6em;
       background-color: $white;
       border-radius: 0.4em;
       box-shadow: $light-shadow;
-      /* .answer에 active를 주고 활성화 시키면 height에 따라 화면이 움직였음.
-        .active를 최상위 부모 태그인 <li> 태그로 변경 
-      */
       &.active {
         .answer {
           display: block;
@@ -47,9 +49,9 @@
             display: inline-block;
             width: 24px;
             height: 24px;
-            background-image: url('../../public/svg/plus.svg');
+            background-image: url('/svg/plus.svg');
             &.active {
-              background-image: url('../../public/svg/minus.svg');
+              background-image: url('/svg/minus.svg');
             }
           }
           &:hover {

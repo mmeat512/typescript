@@ -1,5 +1,5 @@
 export const question = `
-    <main>
+    <section>
         <h2>General Question</h2>
         <ul>
             <li class="question-1">
@@ -32,5 +32,5 @@ export const question = `
                 </div>
             </li>
         </ul>
-    </main>
+    </section>
 `;
