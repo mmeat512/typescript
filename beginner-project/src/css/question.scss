@@ -1,0 +1,73 @@
+@use './colors' as *;
+@use './shadow' as *;
+
+.question-wrap {
+  background-color: $white-gray;
+  min-height: 100vh;
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+    padding: 0;
+  }
+  h2 {
+    padding-top: 1em;
+    font-family: 'Great Vibes', cursive;
+    font-size: 2em;
+    color: $gold;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 0.6em;
+  }
+
+  ul {
+    margin: 0 auto;
+    width: 64vw;
+    padding: 0;
+    li {
+      padding: 1em 2em;
+      margin-bottom: 0.6em;
+      background-color: $white;
+      border-radius: 0.4em;
+      box-shadow: $light-shadow;
+      &.active {
+        .answer {
+          display: block;
+        }
+      }
+      .question {
+        display: flex;
+        justify-content: space-between;
+        padding: 1em 0;
+        span {
+          letter-spacing: 0.2em;
+          font-weight: 500;
+        }
+        .toggle-question {
+          i {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-image: url('/svg/plus.svg');
+            &.active {
+              background-image: url('/svg/minus.svg');
+            }
+          }
+          &:hover {
+            /* rotate -> deg */
+            transform: rotate(90deg);
+            animation: cycle;
+            transition: all 0.5s;
+          }
+        }
+      }
+      .answer {
+        display: none;
+        border-top: 1px solid $gray;
+        padding: 1em 0;
+        color: $gray;
+      }
+    }
+  }
+}

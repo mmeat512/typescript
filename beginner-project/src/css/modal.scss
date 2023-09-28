@@ -1,6 +1,6 @@
 @use './colors' as *;
 
-.modal {
+.modal-wrap {
   background-image: url('modal/tiger.png');
   background-size: 100%;
   background-repeat: no-repeat;
@@ -46,7 +46,7 @@
     }
   }
 
-  .modal-inner {
+  .modal {
     display: none;
     position: fixed;
     width: 100vw;

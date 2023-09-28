@@ -23,7 +23,7 @@ export default function createPages(
   for (let i = 0; i < arr.length; i++) {
     const propertyName = snakeCaseToCamelCase(arr[i]);
     pages[propertyName] = () => {
-      container!.className = arr[i];
+      container!.className = arr[i] + '-wrap';
       container!.innerHTML = page[propertyName];
       script[propertyName]();
     };
