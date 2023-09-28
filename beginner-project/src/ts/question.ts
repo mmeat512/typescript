@@ -4,9 +4,8 @@ function fQuestion() {
     const questionEl = question.firstElementChild;
     const btnEl =
       questionEl?.querySelector<HTMLButtonElement>('.toggle-question');
-    const answerEl = question.lastElementChild;
     btnEl!.addEventListener('click', () => {
-      answerEl!.classList.toggle('active');
+      question!.classList.toggle('active');
       btnEl?.querySelector('i')?.classList.toggle('active');
     });
   });

@@ -1,17 +1,6 @@
 @use './colors' as *;
 @use './shadow' as *;
 
-@keyframes cycle {
-  0% {
-    transform: rotate(90);
-  }
-  //   50% {
-  //     transform: rotate(180);
-  //   }
-  //   100% {
-  //     transform: rotate(360);
-  //   }
-}
 .question-wrap {
   background-color: $white-gray;
   button {
@@ -33,10 +22,18 @@
     li {
       margin: 2em;
       padding: 1em 2em;
-      width: 76vw;
+      width: 60vw;
       background-color: $white;
       border-radius: 0.4em;
       box-shadow: $light-shadow;
+      /* .answer에 active를 주고 활성화 시키면 height에 따라 화면이 움직였음.
+        .active를 최상위 부모 태그인 <li> 태그로 변경 
+      */
+      &.active {
+        .answer {
+          display: block;
+        }
+      }
       .question {
         display: flex;
         justify-content: space-between;
@@ -68,9 +65,6 @@
         border-top: 1px solid $gray;
         padding: 1em 0;
         color: $gray;
-        &.active {
-          display: block;
-        }
       }
     }
   }
