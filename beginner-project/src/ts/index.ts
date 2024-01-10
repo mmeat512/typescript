@@ -2,6 +2,7 @@ import fColorFillpper from './color-fillpper';
 import fCounter from './counter';
 import fModal from './modal';
 import fNavigation from './navigation-bar';
+import fOurMenu from './our-menu';
 import fQuestion from './question';
 import fReviewCarousel from './review-carousel';
 import fSidebar from './sidebar';
@@ -17,6 +18,7 @@ const script: scriptType = {
   sidebar: fSidebar,
   modal: fModal,
   question: fQuestion,
+  ourMenu: fOurMenu,
 };
 
 export default script;

@@ -10,6 +10,7 @@ export const pageStr = [
   'sidebar',
   'modal',
   'question',
+  'our-menu',
 ];
 
 export function addRouteList(router: Router, pages: pagesType) {
@@ -21,7 +22,8 @@ export function addRouteList(router: Router, pages: pagesType) {
     .addRoute('#/review-carousel', pages.reviewCarousel)
     .addRoute('#/sidebar', pages.sidebar)
     .addRoute('#/modal', pages.modal)
-    .addRoute('#/question', pages.question);
+    .addRoute('#/question', pages.question)
+    .addRoute('#/our-menu', pages.ourMenu);
 
   return router;
 }
