@@ -1,0 +1,8 @@
+.todoWrapper {
+  width: 100%;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+  color: rgba(var(--text-todo-rgb), 0.8);
+}
