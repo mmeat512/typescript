@@ -7,3 +7,13 @@
   border: 1px solid #ccc;
   font-size: 0.7rem;
 }
+
+.circle {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+}
+
+.buttonWrapper {
+  text-align: center;
+}

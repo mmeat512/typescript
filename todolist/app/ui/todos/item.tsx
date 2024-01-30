@@ -1,3 +1,4 @@
+import { CheckButton } from './button';
 import styles from './todo.module.css';
 
 export type TotoItemProps = {
@@ -10,7 +11,7 @@ export function TodoItem(props: TotoItemProps) {
   return (
     <div className={styles.item}>
       <div>{text}</div>
-      <button>{isDone}</button>
+      <CheckButton isDone={isDone} />
     </div>
   );
 }
