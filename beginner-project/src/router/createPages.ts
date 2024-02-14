@@ -17,7 +17,7 @@ function snakeCaseToCamelCase(str: string) {
 
 export default function createPages(
   container: HTMLDivElement,
-  arr: Array<string>
+  arr: Array<string>,
 ) {
   let pages: pagesType = {};
   for (let i = 0; i < arr.length; i++) {
@@ -25,7 +25,9 @@ export default function createPages(
     pages[propertyName] = () => {
       container!.className = arr[i] + '-wrap';
       container!.innerHTML = page[propertyName];
-      script[propertyName]();
+      if (script[propertyName]) {
+        script[propertyName]();
+      }
     };
   }
   return pages;

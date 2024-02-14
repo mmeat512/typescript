@@ -24,8 +24,13 @@ export default function createRouter() {
       // routes 배열에서 현재 브라우저 hash값과 동일한 해시 값을 가진 구성 요소를 찾는다.
       const checkRoutes = () => {
         const currentRoute = routes.find(
-          (route) => route.fragment === location.hash
+          route => route.fragment === location.hash,
         );
+
+        // 뒤로가기를 했을 경우 메인 페이지로 이동
+        if (!currentRoute) {
+          routes.find(route => route.fragment === '/')?.component();
+        }
         // 페이지 이동을 보여주기 위해 innerHTML를 변경하는 메서드
         currentRoute?.component();
       };
