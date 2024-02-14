@@ -1,0 +1,19 @@
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.2rem 1rem;
+  margin-bottom: 0.2rem;
+  border: 1px solid #ccc;
+  font-size: 0.7rem;
+}
+
+.circle {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+}
+
+.buttonWrapper {
+  text-align: center;
+}

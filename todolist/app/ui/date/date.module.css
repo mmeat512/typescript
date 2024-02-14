@@ -1,0 +1,38 @@
+.dateWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  align-self: center;
+  margin-bottom: 0.5rem;
+}
+
+.date {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.monthAndYear {
+  display: flex;
+  font-size: 0.55rem;
+  flex-direction: column;
+  align-self: center;
+  margin-left: 0.2rem;
+}
+
+.month {
+  /* font-size: 1rem; */
+  font-weight: 600;
+}
+
+.year {
+  /* font-size: 0.75rem; */
+  font-weight: 400;
+}
+
+.dayWeek {
+  font-size: 0.6rem;
+}
