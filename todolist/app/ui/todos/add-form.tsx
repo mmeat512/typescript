@@ -1,7 +1,12 @@
-export function AddTodoForm() {
+'use client';
+
+export default function AddTodoForm() {
   return (
     <form>
-      <input type="text" placeholder="add todo.." />
+      <div className="inputWapper">
+        <label htmlFor="add-todo">Add todo</label>
+        <input type="text" placeholder="add todo.." />
+      </div>
       <button type="submit">Add</button>
     </form>
   );
