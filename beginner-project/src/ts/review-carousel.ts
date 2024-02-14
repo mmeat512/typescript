@@ -47,7 +47,7 @@ function createArticle(article: HTMLDivElement, reviewer: reviewer) {
 window.addEventListener('DOMContentLoaded', () => {
   console.log('DOM fully loaded and parsed');
   const carouselList: NodeListOf<HTMLDivElement> = document.querySelectorAll(
-    '.carousel-list > article'
+    '.carousel-list > article',
   );
   for (let i = 0; i < carouselList.length; i++) {
     createArticle(carouselList[i], reviewList[i]);
@@ -76,16 +76,10 @@ function nextClick(carouselList: NodeListOf<HTMLDivElement>) {
   }
 }
 
-function resetTransform(carouselList: NodeListOf<HTMLDivElement>) {
-  for (const carousel of carouselList) {
-    carousel.style.transform = 'none';
-  }
-}
-
 function fReviewCarousel() {
   const prevEl = document.querySelector('.prev');
   const carouselList: NodeListOf<HTMLDivElement> = document.querySelectorAll(
-    '.carousel-list > article'
+    '.carousel-list > article',
   );
 
   prevEl!.addEventListener('click', () => {
@@ -109,9 +103,8 @@ function fReviewCarousel() {
     carouselList[index].setAttribute('class', 'article-carousel');
     carouselList[index].style.transform = `translateX(-${currentWidth}px)`;
     carouselList[randomIndex].setAttribute('class', 'article-carousel');
-    carouselList[
-      randomIndex
-    ].style.transform = `translateX(-${currentWidth}px)`;
+    carouselList[randomIndex].style.transform =
+      `translateX(-${currentWidth}px)`;
     for (let i = index; i <= randomIndex; i++) {
       carouselList[i].setAttribute('class', 'article-carousel');
       carouselList[i].style.transform = `translateX(-${currentWidth}px)`;
