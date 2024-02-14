@@ -2,7 +2,7 @@ import menuArticle, { Imenu } from '../components/menuArticle';
 
 function setMenuList(target: Element, menuList: Array<Imenu>) {
   target.remove;
-  menuList.forEach((menu) => target.append(menuArticle(menu)));
+  menuList.forEach(menu => target.append(menuArticle(menu)));
   //   const list = menuList.reduce((arr, cur) =>arr = arr _ c);
 }
 
@@ -94,12 +94,12 @@ function fOurMenu() {
   const buttonList = document.querySelector('.btn-group')!.children;
   for (const btn of buttonList) {
     console.log(btn);
-    console.log(btn.dataset.type);
-    const menuType = btn.dataset.type;
-    btn.addEventListener('click', function () {
-      btn.classList.toggle('active');
-      menuList.filter((menu) => menu.type === menuType);
-    });
+    // console.log(btn.dataset.type);
+    // const menuType = btn.dataset.type;
+    // btn.addEventListener('click', function () {
+    //   btn.classList.toggle('active');
+    //   menuList.filter((menu) => menu.type === menuType);
+    // });
   }
 }
 
