@@ -10,9 +10,9 @@ function createList() {
 }
 
 export const main = `
-  <div>
-    <ul>
+  <main>
+    <ul class="main-list"> 
      ${createList()}
     </ul>
-  </div>
+  </main>
 `;
